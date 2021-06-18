@@ -8,17 +8,23 @@ const instance = axios.create({
 	}
 })
 
+export const profileAPI = {
+	getProfile(userId) {
+		return instance.get(`profile/${userId}`)
+	}
+}
+
 export const usersAPI = {
 	getUsers(currentPage = 1, pageSize = 10) {
 		return instance.get(`users?page=${currentPage}&count=${pageSize}`)
 			.then(responce => responce.data)
 	},
-	buttonUnfollow(id) {
-		return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`)
+	buttonUnfollow(userId) {
+		return instance.delete(`follow/${userId}`)
 			.then(responce => responce.data)
 	},
-	buttonFollow(id) {
-		return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {})
+	buttonFollow(userId) {
+		return instance.post(`follow/${userId}`, {})
 			.then(responce => responce.data)
 	},
 }
