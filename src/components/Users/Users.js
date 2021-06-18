@@ -15,30 +15,21 @@ const Users = (props) => {
 	}
 
 	let clickUserUnfollow = (id) => {
-		// axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
-		// 	withCredentials: true,
-		// 	headers: {
-		// 		"API-KEY": "48f3010c-f192-4caf-b70c-1358b38c2366"
-		// 	}
-		// })
-		usersAPI.buttonUnfollow(id)
-			.then(data => {
-				if (data.resultCode == 0) {
-					props.unfollow(id)
-				}
-			})
+		props.toogleFolowingProgress(true, id)
+		usersAPI.buttonUnfollow(id).then(data => {
+			if (data.resultCode == 0) {
+				props.unfollow(id)
+			}
+			props.toogleFolowingProgress(false, id)
+		})
 	}
 	let clickUserFollow = (id) => {
-		// axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, {
-		// 	withCredentials: true,
-		// 	headers: {
-		// 		"API-KEY": "48f3010c-f192-4caf-b70c-1358b38c2366"
-		// 	}
-		// })
+		props.toogleFolowingProgress(true, id)
 		usersAPI.buttonFollow(id).then(data => {
 			if (data.resultCode == 0) {
 				props.follow(id)
 			}
+			props.toogleFolowingProgress(false, id)
 		})
 	}
 
@@ -62,10 +53,10 @@ const Users = (props) => {
 							</div>
 							<div className='user__btns'>
 								{u.followed
-									? <button className='user__btn user__btn_red' onClick={() => {
+									? <button className='user__btn user__btn_red' disabled={props.followingInPropgress.some(id => id == u.id)} onClick={() => {
 										clickUserUnfollow(u.id)
 									}}>Unfollow</button>
-									: <button className='user__btn' onClick={() => {
+									: <button className='user__btn' disabled={props.followingInPropgress.some(id => id == u.id)} onClick={() => {
 										clickUserFollow(u.id)
 									}}>Follow</button>
 								}
