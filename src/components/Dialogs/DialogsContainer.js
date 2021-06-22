@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 import Dialogs from './Dialogs'
 
 let mapStateToProps = (state) => {
@@ -8,6 +10,12 @@ let mapStateToProps = (state) => {
 		messages: state.messagesPage.messages,
 	}
 }
-let DialogsContainer = connect(mapStateToProps)(Dialogs)
 
-export default DialogsContainer
+export default compose(
+	connect(mapStateToProps),
+	withAuthRedirect
+)(Dialogs)
+
+// let DialogsContainer = connect(mapStateToProps)(Dialogs)
+
+// export default DialogsContainer
