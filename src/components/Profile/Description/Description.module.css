@@ -12,6 +12,16 @@
 }
 .description__info{}
 .description__item{
-	font-size: 22px;
+	font-size: 18px;
 	padding: 5px 0px;
+}
+.description__status{
+	display: block;
+	font-size: 22px;
+	margin: 10px 0px;
+}
+.description__input{
+	margin: 7px 0px;
+	padding: 3px 0px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }

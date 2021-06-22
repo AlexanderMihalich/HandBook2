@@ -7,7 +7,7 @@ const Profile = (props) => {
 
 	return (
 		<div className={style.profile}>
-			<Description profile={props.profile} />
+			<Description profile={props.profile} status={"I'm FrontEnd jun"} />
 			<AddPostContainer />
 		</div>
 	)
