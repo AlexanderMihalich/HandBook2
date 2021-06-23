@@ -3,7 +3,8 @@ import style from './Description.module.css'
 
 class Description extends React.Component {
 	state = {
-		editMode: false
+		editMode: false,
+		status: this.props.status
 	}
 
 	activateEditMode = () => {
@@ -15,6 +16,13 @@ class Description extends React.Component {
 		this.setState({
 			editMode: false
 		})
+		this.props.updateStatus(this.state.status)
+	}
+	onStatusChange = (e) => {
+		this.setState({
+			status: e.currentTarget.value
+		})
+
 	}
 
 	render() {
@@ -29,8 +37,8 @@ class Description extends React.Component {
 						<ul>
 							<li>
 								{(!this.state.editMode)
-									? <label for="status" onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.status}</label>
-									: <input id="status" autoFocus onBlur={this.deactivateEditMode} type="text" className={style.description__input} value={this.props.status} />
+									? <span onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.status || "No status"}</span>
+									: <input autoFocus onBlur={this.deactivateEditMode} type="text" className={style.description__input} value={this.state.status} />
 								}
 							</li>
 							<li className={style.description__item}>Date dirth: 28 marth</li>
@@ -50,8 +58,9 @@ class Description extends React.Component {
 					<ul>
 						<li>
 							{(!this.state.editMode)
-								? <label for="status" onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.profile.aboutMe}</label>
-								: <input id="status" autoFocus onBlur={this.deactivateEditMode} type="text" className={style.description__input} value={this.props.profile.aboutMe} />
+								// ? <span onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.profile.aboutMe}</span>
+								? <span onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.status || "No status"}</span>
+								: <input autoFocus onBlur={this.deactivateEditMode} onChange={this.onStatusChange} type="text" className={style.description__input} value={this.state.status} />
 							}
 						</li>
 						<li className={style.description__item}>{this.props.profile.lookingForAJobDescription}</li>
