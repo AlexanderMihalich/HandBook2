@@ -1,0 +1,19 @@
+.form__control{
+	height: 100%;
+	width: 100%;
+}
+.form__textarea{
+	height: 100px;
+}
+.form__element{
+	height: 100%;
+	width: 100%;
+	padding: 5px 10px;
+}
+.form__control.error input,
+.form__control.error textarea{
+	border: 1px solid #aa0101;
+}
+.form__control.error span{
+	color: #aa0101;;
+}
