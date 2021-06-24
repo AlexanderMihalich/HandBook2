@@ -7,7 +7,7 @@ const Header = (props) => {
 		<header className={style.header}>
 			<div className={`${style.content} _container`}>
 				<div className={style.header__logo} >
-					<img src='https://image000.flaticon.com/png/512/187/187850.png' />
+					<img alt="" src='https://image000.flaticon.com/png/512/187/187850.png' />
 					<h1 className={style.header__title}>HandBook</h1>
 				</div>
 				<div className={style.header__login}>

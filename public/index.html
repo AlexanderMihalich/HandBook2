@@ -40,4 +40,18 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+	<input type="file" id="photo">
+	<script>
+		function uploadPhoto()
+		{
+			var formData = new formData();
+			var imagefile =  document.querySelector('#photo');
+			formData.append("image", imagefile.files[0]);
+			axiosInstance.post('profile/photo', formData,{
+				headers:{
+					'Content-Type': 'multipart/form-data'
+				}
+			}).then(res=> console.log(res.data));
+		}
+	</script>
 </html>

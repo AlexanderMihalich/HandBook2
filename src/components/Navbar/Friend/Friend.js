@@ -5,7 +5,7 @@ const Friend = (props) => {
 
 	return (
 		<div className={style.nav__friend}>
-			<img className={style.nav__avatar} src={props.avatar} />
+			<img alt="" className={style.nav__avatar} src={props.avatar} />
 			<span className={style.nav__name}>{props.user}</span>
 		</div>
 	)

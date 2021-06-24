@@ -5,7 +5,7 @@ const MyPosts = (props) => {
 	return (
 		<div className={style.posts__item}>
 			<div className={style.posts__ava}>
-				<img src={props.img}/>
+				<img alt="" src={props.img} />
 			</div>
 			<p className={style.posts__text}>
 				{props.message}

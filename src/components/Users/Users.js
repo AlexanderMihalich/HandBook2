@@ -23,7 +23,7 @@ const Users = (props) => {
 						<div className='user__ava'>
 							{/* <img src={u.avatar} /> */}
 							<NavLink to={'/profile/' + u.id}>
-								<img src={u.photos.small !== null ? u.photos.small : userPhoto} />
+								<img alt="" src={u.photos.small !== null ? u.photos.small : userPhoto} />
 							</NavLink>
 						</div>
 						<div className='user__items'>
@@ -35,10 +35,10 @@ const Users = (props) => {
 							<div className='user__btns'>
 								{u.followed
 									? <button className='user__btn user__btn_red'
-										disabled={props.followingInPropgress.some(id => id == u.id)}
+										disabled={props.followingInPropgress.some(id => id === u.id)}
 										onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
 									: <button className='user__btn'
-										disabled={props.followingInPropgress.some(id => id == u.id)}
+										disabled={props.followingInPropgress.some(id => id === u.id)}
 										onClick={() => { props.follow(u.id) }}>Follow</button>
 								}
 							</div>

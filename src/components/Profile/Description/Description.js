@@ -22,7 +22,14 @@ class Description extends React.Component {
 		this.setState({
 			status: e.currentTarget.value
 		})
+	}
 
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.status !== this.props.status) {
+			this.setState({
+				status: this.props.status
+			})
+		}
 	}
 
 	render() {
@@ -30,7 +37,7 @@ class Description extends React.Component {
 			return (
 				<div className={style.description}>
 					<div className={style.description__avatar}>
-						<img src='https://images.wallpaperscraft.ru/image/serfing_chelovek_siluet_184882_1920x1080.jpg' />
+						<img alt="" src='https://images.wallpaperscraft.ru/image/serfing_chelovek_siluet_184882_1920x1080.jpg' />
 					</div>
 					<div className={style.description__info}>
 						<h2 className={`${style.description__name} title`} >Alexander Z.</h2>
@@ -51,7 +58,7 @@ class Description extends React.Component {
 		return (
 			<div className={style.description} >
 				<div className={style.description__avatar}>
-					<img src={this.props.profile.photos.large} />
+					{<img alt="" src={this.props.profile.photos.large} />}
 				</div>
 				<div className={style.description__info}>
 					<h2 className={`${style.description__name} title`} >{this.props.profile.fullName}</h2>
@@ -68,7 +75,9 @@ class Description extends React.Component {
 					</ul>
 				</div>
 			</div>
+
 		)
 	}
 }
 export default Description
+
