@@ -33,4 +33,8 @@
 .form__btn{
 	width: 100%;
 	height: 100%;
+	background-color: rgba(42, 33, 124, 0.96);
+	color:#fff;
+	text-transform: uppercase;
+	font-size: 18px;
 }

@@ -15,7 +15,3 @@ export default compose(
 	connect(mapStateToProps),
 	withAuthRedirect
 )(Dialogs)
-
-// let DialogsContainer = connect(mapStateToProps)(Dialogs)
-
-// export default DialogsContainer

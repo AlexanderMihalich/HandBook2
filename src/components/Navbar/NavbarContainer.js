@@ -13,6 +13,3 @@ let mapStateToProps = (state) => {
 export default compose(
 	connect(mapStateToProps)
 )(Nav)
-// let NavbarContainer = connect(mapStateToProps)(Nav)
-
-// export default NavbarContainer

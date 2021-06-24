@@ -50,11 +50,3 @@ export default compose(
 		}),
 	withAuthRedirect
 )(UsersAPIContainer)
-
-// let UsersContainer = connect(mapStateToProps,
-// 	{
-// 		followSuccess, unfollowSuccess, setCurrentPage, toogleFolowingProgress,
-// 		getUsers, follow, unfollow
-// 	})(UsersAPIContainer)
-
-// export default UsersContainer
