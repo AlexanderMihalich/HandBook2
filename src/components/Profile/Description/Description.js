@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Description.module.css'
+import Preloader from '../../common/Preloader/Preloader';
 
 class Description extends React.Component {
 	state = {
@@ -34,26 +35,7 @@ class Description extends React.Component {
 
 	render() {
 		if (!this.props.profile) {
-			return (
-				<div className={style.description}>
-					<div className={style.description__avatar}>
-						<img alt="" src='https://images.wallpaperscraft.ru/image/serfing_chelovek_siluet_184882_1920x1080.jpg' />
-					</div>
-					<div className={style.description__info}>
-						<h2 className={`${style.description__name} title`} >Alexander Z.</h2>
-						<ul>
-							<li>
-								{(!this.state.editMode)
-									? <span onDoubleClick={this.activateEditMode} className={style.description__status}>{this.props.status || "No status"}</span>
-									: <input autoFocus onBlur={this.deactivateEditMode} type="text" className={style.description__input} value={this.state.status} />
-								}
-							</li>
-							<li className={style.description__item}>Date dirth: 28 marth</li>
-							<li className={style.description__item}>City: Kyiv</li>
-						</ul>
-					</div>
-				</div>
-			)
+			return (<Preloader />)
 		}
 		return (
 			<div className={style.description} >

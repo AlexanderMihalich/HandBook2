@@ -2,7 +2,6 @@ import React from 'react'
 import './Users.css'
 import userPhoto from '../../img/user.png'
 import { NavLink } from 'react-router-dom';
-import { usersAPI } from '../../api/api';
 
 const Users = (props) => {
 
@@ -16,7 +15,6 @@ const Users = (props) => {
 
 	return (
 		<div className='users'>
-			<h2 className='users__title'>Users</h2>
 			<div className='users__body'>
 				{props.usersPage.map(u =>
 					<div key={u.id} className='user'>

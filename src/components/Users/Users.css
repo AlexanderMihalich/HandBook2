@@ -1,5 +1,10 @@
+.users__container{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+}
 .users{
-	width: 76%;
+	width: 97%;
 	padding: 0px 0px 100px 0px;
 }
 .users__title{
@@ -10,7 +15,7 @@
 .pagination{
 	display: flex;
 	flex-wrap: wrap;
-	text-align: center;
+	text-align: flex-end;
 	justify-content: center;
 }
 .pagination__item{
@@ -30,6 +35,9 @@
 	display: flex;
 	margin: 20px 0;
 	background-color: #E6EEEA;
+}
+.users__body{
+	min-height: 950px;
 }
 	.user__ava img{
 		width: 100px;

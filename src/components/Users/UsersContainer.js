@@ -1,10 +1,10 @@
 import React from 'react'
+import './Users.css'
 import { connect } from 'react-redux'
 import { followSuccess, setCurrentPage, unfollowSuccess, toogleFolowingProgress, getUsers, follow, unfollow } from '../../redux/users-reducer'
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader'
 import { compose } from 'redux';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 class UsersAPIContainer extends React.Component {
 	componentDidMount() {
@@ -15,7 +15,8 @@ class UsersAPIContainer extends React.Component {
 	}
 
 	render() {
-		return <>
+		return <div className='users__container'>
+			<h2 className='users__title'>Users</h2>
 			{this.props.isFetching ? <Preloader /> : null}
 			< Users
 				usersPage={this.props.usersPage}
@@ -27,7 +28,7 @@ class UsersAPIContainer extends React.Component {
 				unfollow={this.props.unfollow}
 				followingInPropgress={this.props.followingInPropgress}
 			/>
-		</>
+		</div>
 	}
 }
 
@@ -39,7 +40,6 @@ let mapStateToProps = (state) => {
 		currentPage: state.usersPage.currentPage,
 		isFetching: state.usersPage.isFetching,
 		followingInPropgress: state.usersPage.followingInPropgress,
-
 	}
 }
 export default compose(
@@ -48,5 +48,4 @@ export default compose(
 			followSuccess, unfollowSuccess, setCurrentPage, toogleFolowingProgress,
 			getUsers, follow, unfollow
 		}),
-	withAuthRedirect
 )(UsersAPIContainer)
