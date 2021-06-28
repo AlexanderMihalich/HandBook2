@@ -1,10 +1,11 @@
 import React from 'react'
 import './Users.css'
 import { connect } from 'react-redux'
-import { followSuccess, setCurrentPage, unfollowSuccess, toogleFolowingProgress, getUsers, follow, unfollow } from '../../redux/users-reducer'
+import { followSuccess, setCurrentPage, unfollowSuccess, toogleFolowingProgress, requestUsers, follow, unfollow } from '../../redux/users-reducer'
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader'
 import { compose } from 'redux';
+import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUserCount, getUsers } from '../../selectors/users-selectors';
 
 class UsersAPIContainer extends React.Component {
 	componentDidMount() {
@@ -34,18 +35,18 @@ class UsersAPIContainer extends React.Component {
 
 let mapStateToProps = (state) => {
 	return {
-		usersPage: state.usersPage.users,
-		pageSize: state.usersPage.pageSize,
-		totalUserCount: state.usersPage.totalUserCount,
-		currentPage: state.usersPage.currentPage,
-		isFetching: state.usersPage.isFetching,
-		followingInPropgress: state.usersPage.followingInPropgress,
+		usersPage: getUsers(state),
+		pageSize: getPageSize(state),
+		totalUserCount: getTotalUserCount(state),
+		currentPage: getCurrentPage(state),
+		isFetching: getIsFetching(state),
+		followingInPropgress: getFollowingInProgress(state),
 	}
 }
 export default compose(
 	connect(mapStateToProps,
 		{
 			followSuccess, unfollowSuccess, setCurrentPage, toogleFolowingProgress,
-			getUsers, follow, unfollow
+			getUsers: requestUsers, follow, unfollow
 		}),
 )(UsersAPIContainer)
