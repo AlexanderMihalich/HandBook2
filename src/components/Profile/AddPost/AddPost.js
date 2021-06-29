@@ -3,7 +3,8 @@ import style from './AddPost.module.css'
 import MyPosts from './MyPosts/MyPosts';
 import AddNewPostForm from './AddNewPostForm/AddNewPostForm'
 
-const AddPost = (props) => {
+const AddPost = React.memo((props) => {
+	console.log('RENDER');
 
 	let postsElement = props.posts.map(p => <MyPosts img={p.img} key={p.id} message={p.message} />)
 
@@ -21,6 +22,6 @@ const AddPost = (props) => {
 		</div>
 
 	)
-}
+})
 
 export default AddPost
