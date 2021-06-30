@@ -5,12 +5,10 @@ import Message from './Message';
 
 let mapStateToProps = (state) => {
 	return {
-		newMessage: state.messagesPage.newMessage,
 		newMessageText: state.messagesPage.newMessageText,
 	}
 }
 export default compose(
 	connect(mapStateToProps, {
-		sendMessage,
 	})
 )(Message)

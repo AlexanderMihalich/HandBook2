@@ -1,14 +1,14 @@
 import React from 'react'
 import style from './MyPosts.module.css'
 
-const MyPosts = (props) => {
+const MyPosts = ({ img, message }) => {
 	return (
 		<div className={style.posts__item}>
 			<div className={style.posts__ava}>
-				<img alt="" src={props.img} />
+				<img alt="" src={img} />
 			</div>
 			<p className={style.posts__text}>
-				{props.message}
+				{message}
 			</p>
 		</div>
 	)
