@@ -12,7 +12,7 @@ let TOGGLE_IS_FOLLOWING_PROGRESS = 'users-reducer/TOGGLE_IS_FOLLOWING_PROGRESS'
 let initialState = {
 	users: [],
 	pageSize: 5,
-	totalUserCount: 0,
+	totalItemsCount: 0,
 	currentPage: 2,
 	isFetching: true,
 	followingInPropgress: [],
@@ -33,9 +33,9 @@ const usersReducer = (state = initialState, action) => {
 		case SET_USERS:
 			return { ...state, users: action.users }
 		case SET_CURRENT_PAGE:
-			return { ...state, currentPage: action.currentPag }
+			return { ...state, currentPage: action.currentPage }
 		case SET_USERS_TOTAL_COUNT:
-			return { ...state, totalUserCount: action.count }
+			return { ...state, totalItemsCount: action.count }
 		case TOGGLE_IS_FETCHING:
 			return { ...state, isFetching: action.isFetching }
 		case TOGGLE_IS_FOLLOWING_PROGRESS:
@@ -53,7 +53,7 @@ export const followSuccess = (userId) => ({ type: FOLLOW, userId })
 export const unfollowSuccess = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsers = (users) => ({ type: SET_USERS, users })
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
-export const setUsersTotalCount = (totalUserCount) => ({ type: SET_USERS_TOTAL_COUNT, count: totalUserCount })
+export const setItemsTotalCount = (totalItemsCount) => ({ type: SET_USERS_TOTAL_COUNT, count: totalItemsCount })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 export const toogleFolowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
 
@@ -62,7 +62,7 @@ export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 	let data = await usersAPI.getUsers(currentPage, pageSize)
 	dispatch(toggleIsFetching(false))
 	dispatch(setUsers(data.items))
-	dispatch(setUsersTotalCount(data.totalCount))
+	dispatch(setItemsTotalCount(data.totalCount))
 }
 
 const followUnfollow = async (dispatch, userId, aipMethod, actionCreator) => {

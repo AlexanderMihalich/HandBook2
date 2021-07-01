@@ -6,7 +6,9 @@
 	padding: 20px 20px 20px 30px;
 	min-height: 590px;
 }
-.nav ul{}
+.nav ul{
+	margin: 0px 0px 80px 0px;
+}
 .nav a{
 	display: block;
 	padding: 13px 0px;

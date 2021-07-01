@@ -15,8 +15,6 @@ const Nav = ({ friends }) => {
 					activeClassName={style.active}>Messages</NavLink></li>
 				<li><NavLink to='/users'
 					activeClassName={style.active}>Users</NavLink></li>
-				<li><NavLink to='/music'
-					activeClassName={style.active}>Music</NavLink></li>
 				<li><NavLink to='/settings'
 					activeClassName={style.active} className={style.nav__settings}>Settings</NavLink></li>
 			</ul>
