@@ -3,13 +3,12 @@ import style from './AddPost.module.css'
 import MyPosts from './MyPosts/MyPosts';
 import AddNewPostForm from './AddNewPostForm/AddNewPostForm'
 
-const AddPost = React.memo((props) => {
-	console.log('RENDER');
+const AddPost = React.memo(({ posts, addPost }) => {
 
-	let postsElement = props.posts.map(p => <MyPosts img={p.img} key={p.id} message={p.message} />)
+	let postsElement = posts.map(p => <MyPosts img={p.img} key={p.id} message={p.message} />)
 
 	let addNewPost = (values) => {
-		props.addPost(values.newPostText)
+		addPost(values.newPostText)
 	}
 
 	return (

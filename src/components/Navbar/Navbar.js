@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 import Friend from './Friend/Friend'
 import style from './Navbar.module.css'
 
-const Nav = (props) => {
+const Nav = ({ friends }) => {
 
-	let friendsElement = props.friends.map(f => <Friend avatar={f.avatar} key={f.id} user={f.user} />)
+	let friendsElement = friends.map(f => <Friend avatar={f.avatar} key={f.id} user={f.user} />)
 	return (
 		<nav className={style.nav}>
 			<ul>

@@ -4,7 +4,6 @@ import { compose } from 'redux'
 import Nav from './Navbar'
 
 let mapStateToProps = (state) => {
-
 	return {
 		friends: state.sidebarPage
 	}

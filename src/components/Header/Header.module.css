@@ -1,6 +1,8 @@
 .header{
+	position: relative;	
 	padding: 0px 30px;
 	background-color: hsla(246, 73%, 26%, 0.938);
+	z-index: 100;
 }
 .content{
 	display: flex;

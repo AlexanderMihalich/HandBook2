@@ -1,7 +1,6 @@
 .dialogs__message{
-	padding: 20px 0px;
+	padding: 13px 0px;
 	position: relative;
-	height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -10,6 +9,7 @@
 .dialogs__textarea{
 	margin: 10px 0px 0px 0px;
 	height: 70px;
+	
 }
 .dialogs__add{
 	position: relative;

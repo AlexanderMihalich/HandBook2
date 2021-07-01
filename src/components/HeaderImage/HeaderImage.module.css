@@ -1,7 +1,9 @@
 .content__header img{
+	position: relative;
 	width: 100%;
 	object-fit: cover;
 	height: 300px;
+	z-index: 2;
 }
 
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import style from './../Navbar.module.css'
 
-const Friend = (props) => {
+const Friend = ({ avatar, user }) => {
 
 	return (
 		<div className={style.nav__friend}>
-			<img alt="" className={style.nav__avatar} src={props.avatar} />
-			<span className={style.nav__name}>{props.user}</span>
+			<img alt="" className={style.nav__avatar} src={avatar} />
+			<span className={style.nav__name}>{user}</span>
 		</div>
 	)
 }
