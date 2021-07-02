@@ -2,7 +2,7 @@
   "files": {
     "static/js/0.3843d0b1.chunk.js": "/HandBook2/static/js/0.3843d0b1.chunk.js",
     "static/js/0.3843d0b1.chunk.js.map": "/HandBook2/static/js/0.3843d0b1.chunk.js.map",
-    "main.css": "/HandBook2/static/css/main.34b78578.chunk.css",
+    "main.css": "/HandBook2/static/css/main.6dcf2916.chunk.css",
     "main.js": "/HandBook2/static/js/main.137c129e.chunk.js",
     "main.js.map": "/HandBook2/static/js/main.137c129e.chunk.js.map",
     "runtime-main.js": "/HandBook2/static/js/runtime-main.5ee60a4a.js",
@@ -26,7 +26,7 @@
     "static/css/5.daa9ca97.chunk.css.map": "/HandBook2/static/css/5.daa9ca97.chunk.css.map",
     "static/css/6.4e6f9610.chunk.css.map": "/HandBook2/static/css/6.4e6f9610.chunk.css.map",
     "static/css/7.a12919f2.chunk.css.map": "/HandBook2/static/css/7.a12919f2.chunk.css.map",
-    "static/css/main.34b78578.chunk.css.map": "/HandBook2/static/css/main.34b78578.chunk.css.map",
+    "static/css/main.6dcf2916.chunk.css.map": "/HandBook2/static/css/main.6dcf2916.chunk.css.map",
     "static/js/3.54a6743b.chunk.js.LICENSE.txt": "/HandBook2/static/js/3.54a6743b.chunk.js.LICENSE.txt",
     "static/js/4.3f3570ee.chunk.js.LICENSE.txt": "/HandBook2/static/js/4.3f3570ee.chunk.js.LICENSE.txt",
     "static/js/5.31e43fb7.chunk.js.LICENSE.txt": "/HandBook2/static/js/5.31e43fb7.chunk.js.LICENSE.txt",
@@ -36,7 +36,7 @@
   "entrypoints": [
     "static/js/runtime-main.5ee60a4a.js",
     "static/js/3.54a6743b.chunk.js",
-    "static/css/main.34b78578.chunk.css",
+    "static/css/main.6dcf2916.chunk.css",
     "static/js/main.137c129e.chunk.js"
   ]
 }
