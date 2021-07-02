@@ -1,0 +1,41 @@
+{
+  "files": {
+    "static/js/0.9f8eb68e.chunk.js": "/HandBook2/static/js/0.9f8eb68e.chunk.js",
+    "static/js/0.9f8eb68e.chunk.js.map": "/HandBook2/static/js/0.9f8eb68e.chunk.js.map",
+    "main.css": "/HandBook2/static/css/main.0b5d0771.chunk.css",
+    "main.js": "/HandBook2/static/js/main.c82c0752.chunk.js",
+    "main.js.map": "/HandBook2/static/js/main.c82c0752.chunk.js.map",
+    "runtime-main.js": "/HandBook2/static/js/runtime-main.b0fecc80.js",
+    "runtime-main.js.map": "/HandBook2/static/js/runtime-main.b0fecc80.js.map",
+    "static/js/3.d63fda0a.chunk.js": "/HandBook2/static/js/3.d63fda0a.chunk.js",
+    "static/js/3.d63fda0a.chunk.js.map": "/HandBook2/static/js/3.d63fda0a.chunk.js.map",
+    "static/css/4.4d570d3c.chunk.css": "/HandBook2/static/css/4.4d570d3c.chunk.css",
+    "static/js/4.edac1253.chunk.js": "/HandBook2/static/js/4.edac1253.chunk.js",
+    "static/js/4.edac1253.chunk.js.map": "/HandBook2/static/js/4.edac1253.chunk.js.map",
+    "static/css/5.06c65395.chunk.css": "/HandBook2/static/css/5.06c65395.chunk.css",
+    "static/js/5.257957d6.chunk.js": "/HandBook2/static/js/5.257957d6.chunk.js",
+    "static/js/5.257957d6.chunk.js.map": "/HandBook2/static/js/5.257957d6.chunk.js.map",
+    "static/css/6.3d930aaa.chunk.css": "/HandBook2/static/css/6.3d930aaa.chunk.css",
+    "static/js/6.09cc8dfc.chunk.js": "/HandBook2/static/js/6.09cc8dfc.chunk.js",
+    "static/js/6.09cc8dfc.chunk.js.map": "/HandBook2/static/js/6.09cc8dfc.chunk.js.map",
+    "static/css/7.e5dd51fb.chunk.css": "/HandBook2/static/css/7.e5dd51fb.chunk.css",
+    "static/js/7.1e46f9ec.chunk.js": "/HandBook2/static/js/7.1e46f9ec.chunk.js",
+    "static/js/7.1e46f9ec.chunk.js.map": "/HandBook2/static/js/7.1e46f9ec.chunk.js.map",
+    "index.html": "/HandBook2/index.html",
+    "static/css/4.4d570d3c.chunk.css.map": "/HandBook2/static/css/4.4d570d3c.chunk.css.map",
+    "static/css/5.06c65395.chunk.css.map": "/HandBook2/static/css/5.06c65395.chunk.css.map",
+    "static/css/6.3d930aaa.chunk.css.map": "/HandBook2/static/css/6.3d930aaa.chunk.css.map",
+    "static/css/7.e5dd51fb.chunk.css.map": "/HandBook2/static/css/7.e5dd51fb.chunk.css.map",
+    "static/css/main.0b5d0771.chunk.css.map": "/HandBook2/static/css/main.0b5d0771.chunk.css.map",
+    "static/js/3.d63fda0a.chunk.js.LICENSE.txt": "/HandBook2/static/js/3.d63fda0a.chunk.js.LICENSE.txt",
+    "static/js/5.257957d6.chunk.js.LICENSE.txt": "/HandBook2/static/js/5.257957d6.chunk.js.LICENSE.txt",
+    "static/media/loader.6bf0196c.svg": "/HandBook2/static/media/loader.6bf0196c.svg",
+    "static/media/user.e492f96c.png": "/HandBook2/static/media/user.e492f96c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0fecc80.js",
+    "static/js/3.d63fda0a.chunk.js",
+    "static/css/main.0b5d0771.chunk.css",
+    "static/js/main.c82c0752.chunk.js"
+  ]
+}
