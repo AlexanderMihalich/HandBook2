@@ -3,7 +3,7 @@
 	background-color: #2854A5;
 	margin: 20px 0px 20px auto;
 	width: 20%;
-	padding: 20px 20px 20px 30px;
+	padding: 20px 20px 15px 30px;
 	min-height: 590px;
 }
 .nav ul{
@@ -23,7 +23,7 @@
 	margin: 25px 0px 0px 0px;
 }
 .nav__title{
-	font-size: 35px;
+	font-size: 30px;
 	color:#fff;
 	margin: 50px 0px 20px 0px;
 }

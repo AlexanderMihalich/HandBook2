@@ -3,7 +3,7 @@ import './css/App.css';
 import './css/null.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import HeaderImage from './components/HeaderImage/HeaderImage';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import { HashRouter, Route, withRouter } from 'react-router-dom'
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -25,7 +25,8 @@ class App extends React.Component {
 		}
 		return (
 
-			<BrowserRouter basename={process.env.PUBLIC_URL}>
+			// <BrowserRouter basename={process.env.PUBLIC_URL}>
+			<HashRouter>
 				<div className="app-wrapper">
 					<HeaderContainer />
 					<div className='wrapper'>
@@ -45,7 +46,7 @@ class App extends React.Component {
 						</div>
 					</div>
 				</div>
-			</BrowserRouter >
+			</HashRouter >
 		);
 	}
 }

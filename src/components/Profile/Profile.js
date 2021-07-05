@@ -3,10 +3,10 @@ import Description from './Description/Description';
 import style from './Profile.module.css'
 import AddPostContainer from './AddPost/AddPostContainer';
 
-const Profile = ({ profile, isOwner, savePhoto, status, updateStatus }) => {
+const Profile = ({ profile, isOwner, savePhoto, saveProfile, status, updateStatus }) => {
 	return (
 		<div className={style.profile}>
-			<Description profile={profile} isOwner={isOwner} savePhoto={savePhoto} status={status} updateStatus={updateStatus} />
+			<Description profile={profile} isOwner={isOwner} savePhoto={savePhoto} saveProfile={saveProfile} status={status} updateStatus={updateStatus} />
 			<AddPostContainer />
 		</div>
 	)

@@ -5,10 +5,10 @@ import LoginForm from './LoginForm/LoginForm'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-const Login = ({ login, isAuth }) => {
+const Login = ({ login, isAuth, captchaUrl }) => {
 
 	const sendData = (formData) => {
-		login(formData.email, formData.password, formData.rememberMe)
+		login(formData.email, formData.password, formData.rememberMe, formData.captcha)
 	}
 	if (isAuth) {
 		return <Redirect to={"/profile"} />
@@ -16,11 +16,12 @@ const Login = ({ login, isAuth }) => {
 	return (
 		<div className={style.login}>
 			<h1 className={style.login__title}>Login</h1>
-			<LoginForm onSubmit={sendData} />
+			<LoginForm onSubmit={sendData} captchaUrl={captchaUrl} />
 		</div>
 	)
 }
 const mapStateToProps = (state) => ({
-	isAuth: state.auth.isAuth
+	isAuth: state.auth.isAuth,
+	captchaUrl: state.auth.captchaUrl
 })
 export default connect(mapStateToProps, { login })(Login)

@@ -59,7 +59,7 @@ export const toogleFolowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS
 
 export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 	dispatch(toggleIsFetching(true))
-	let data = await usersAPI.getUsers(currentPage, pageSize)
+	const data = await usersAPI.getUsers(currentPage, pageSize)
 	dispatch(toggleIsFetching(false))
 	dispatch(setUsers(data.items))
 	dispatch(setItemsTotalCount(data.totalCount))
@@ -67,14 +67,13 @@ export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 
 const followUnfollow = async (dispatch, userId, aipMethod, actionCreator) => {
 	dispatch(toogleFolowingProgress(true, userId))
-	let data = await aipMethod(userId)
+	const data = await aipMethod(userId)
 	if (!data.resultCode) {
 		dispatch(actionCreator(userId))
 	}
 	dispatch(toogleFolowingProgress(false, userId))
 }
 export const unfollow = (userId) => async (dispatch) => {
-
 	followUnfollow(dispatch, userId, usersAPI.buttonUnfollow.bind(usersAPI), unfollowSuccess)
 }
 export const follow = (userId) => async (dispatch) => {

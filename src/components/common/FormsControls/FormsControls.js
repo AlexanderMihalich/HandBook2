@@ -1,8 +1,7 @@
 import React from 'react'
 import style from './FormsControls.module.css'
-import styleLogin from '../../Login/Login.module.css'
-import styleError from '../../common/FormsControls/FormsControls.module.css'
 import { Field } from 'redux-form';
+
 
 export const Element = Element => ({ input, meta, ...props }) => {
 	const hasError = meta.touched && meta.error;
@@ -16,8 +15,9 @@ export const Element = Element => ({ input, meta, ...props }) => {
 		</div>
 	)
 }
-export const createField = (type, name, placeholder, component, validate, error) => (
-	<div className={`${styleLogin.form__item} ${error ? styleError.error__span : ""}`}>
-		<Field type={type} name={name} placeholder={placeholder} component={component} validate={validate} className={styleLogin.form__input} />
-	</div>
+export const Input = Element("input");
+export const Textarea = Element("textarea");
+
+export const createField = (type, name, placeholder, component, validate) => (
+	<Field type={type} name={name} placeholder={placeholder} component={component} validate={validate} className={style.form__input} />
 )
