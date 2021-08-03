@@ -1,23 +1,19 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import Dialog from './Dialog/Dialog'
-import style from './Dialogs.module.css'
-import MessageContainer from './Message/MessageContainer'
-import AddMessageForm from './Message/AddMessageForm/AddMessageForm';
-import Sms from './Sms/Sms'
-const Dialogs = ({ dialogs, messages, newMessage, sendMessage }) => {
+import style from './Dialogs.module.scss'
+import MessagesContainer from './Messages/MessagesContainer'
+import AddMessageForm from './Messages/AddMessageForm/AddMessageForm';
+import MyMessage from './MyMessage/MyMessage'
 
-	// let dialogsElement = dialogs.map(d => <Dialog id={d.id} key={d.id} user={d.user} avatar={d.avatar} />)
-	let messagesElement = messages.map(m => <MessageContainer message={m.message} key={m.id} />)
-	let smsElement = newMessage.map(s => <Sms sms={s.sms} key={s.id} />)
+const Dialogs = ({ messages, newMessage, sendMessage }) => {
+
+	let messagesElement = messages.map(m => <MessagesContainer message={m.message} key={m.id} />)
+	let smsElement = newMessage.map(s => <MyMessage sms={s.sms} key={s.id} />)
+
 	let addNewMessage = (values) => {
 		sendMessage(values.newMessageText)
 	}
 	return (
 		<div className={style.dialogs}>
-			{/* <div className={style.dialogs__dialogItems}>
-				{dialogsElement}
-			</div> */}
 			<div className={style.dialogs__messages}>
 				{messagesElement}
 				{smsElement}

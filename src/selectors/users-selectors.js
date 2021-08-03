@@ -21,4 +21,7 @@ export const getIsFetching = (state) => {
 export const getFollowingInProgress = (state) => {
 	return state.usersPage.followingInPropgress
 }
+export const getUserBackground = (state) => {
+	return state.userPage.userBackground
+}
 

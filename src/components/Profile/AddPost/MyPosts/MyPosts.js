@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './MyPosts.module.css'
+import style from '../AddPost.module.scss'
 
 const MyPosts = ({ img, message }) => {
 	return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import userPhoto from '../../img/user.png'
+import userPhoto from '../../assets/img/user2.png'
 
 export const ImageUnderstudy = (photo) => {
 	return (

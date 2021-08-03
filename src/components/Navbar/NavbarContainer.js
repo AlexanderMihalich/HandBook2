@@ -1,14 +1,19 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import Nav from './Navbar'
+import React, { Component } from 'react'
+import Navbar from './Navbar';
 
-let mapStateToProps = (state) => {
-	return {
-		friends: state.sidebarPage
+class NavbarContainer extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { isActive: false };
+	}
+	clickActive = () => {
+		this.setState({
+			isActive: true
+		})
+	}
+	render() {
+		return <Navbar clickActive={this.clickActive} />
 	}
 }
 
-export default compose(
-	connect(mapStateToProps)
-)(Nav)
+export default NavbarContainer

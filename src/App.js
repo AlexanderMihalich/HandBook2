@@ -1,19 +1,20 @@
 import React from 'react';
-import './css/App.css';
-import './css/null.css';
+import './assets/css/fonts.css';
+import './assets/css/null.css';
 import HeaderContainer from './components/Header/HeaderContainer';
-import HeaderImage from './components/HeaderImage/HeaderImage';
-import { HashRouter, Route, withRouter } from 'react-router-dom'
-import NavbarContainer from './components/Navbar/NavbarContainer';
+import Background from './components/Background/Background';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { initializeApp } from './redux/app-reducer';
-import Preloader from './components/common/Preloader/Preloader';
+import { initializeApp } from './state/app-reducer';
+import PreloaderApp from './components/common/PreloaderApp/PreloaderApp';
 import { withSuspense } from './hoc/withSuspense';
+import Navbar from './components/Navbar/Navbar';
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'))
 const Login = React.lazy(() => import('./components/Login/Login'))
+const Error404 = React.lazy(() => import('./components/Error404/Error404'))
 
 class App extends React.Component {
 	componentDidMount() {
@@ -21,18 +22,18 @@ class App extends React.Component {
 	}
 	render() {
 		if (!this.props.initialized) {
-			return <Preloader />
+			return <PreloaderApp />
 		}
 		return (
-
-			// <BrowserRouter basename={process.env.PUBLIC_URL}>
-			<HashRouter>
-				<div className="app-wrapper">
+			<BrowserRouter>
+				<div className="wrapper">
 					<HeaderContainer />
-					<div className='wrapper'>
-						<div className='content'>
-							<HeaderImage />
-							<div className='content__content _container'>
+					<main className='page'>
+						<Background />
+						<div className='page__content _container'>
+							<Switch>
+								<Route exact path='/'
+									render={() => <Redirect to='/profile' />} />
 								<Route path='/profile/:userId?'
 									render={withSuspense(ProfileContainer)} />
 								<Route path='/dialogs'
@@ -41,12 +42,14 @@ class App extends React.Component {
 									render={withSuspense(UsersContainer)} />
 								<Route path='/login'
 									render={withSuspense(Login)} />
-								<NavbarContainer />
-							</div>
+								<Route path='*'
+									render={withSuspense(Error404)} />
+							</Switch>
+							<Navbar />
 						</div>
-					</div>
+					</main>
 				</div>
-			</HashRouter >
+			</BrowserRouter >
 		);
 	}
 }
@@ -55,5 +58,4 @@ const mapStateToProps = (state) => ({
 	initialized: state.app.initialized
 })
 export default compose(
-	// withRouter,
 	connect(mapStateToProps, { initializeApp }))(App)

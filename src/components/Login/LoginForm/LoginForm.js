@@ -1,14 +1,13 @@
 import React from 'react'
-import style from '../Login.module.css'
-import styleError from '../../common/FormsControls/FormsControls.module.css'
+import style from '../Login.module.scss'
+import styleError from '../../common/FormsControls/FormsControls.module.scss'
 import { reduxForm, Field } from 'redux-form';
 import { maxLengthCreator, required } from '../../../utils/validators/validators';
-import { createField, Element, Input } from '../../common/FormsControls/FormsControls';
+import { createField, Input } from '../../common/FormsControls/FormsControls';
 
 const maxLength10 = maxLengthCreator(10)
 
 let LoginForm = ({ handleSubmit, error, captchaUrl }) => {
-
 
 	return (
 		<form className={style.form} onSubmit={handleSubmit}>
@@ -23,14 +22,14 @@ let LoginForm = ({ handleSubmit, error, captchaUrl }) => {
 				{createField("password", "password", "Password", Input, [required, maxLength10])}
 			</div >
 			{captchaUrl && <div>
-				<img src={captchaUrl} />
+				<img alt="" src={captchaUrl} />
 				<div className={`${style.form__item} ${style.form__captcha} ${error ? styleError.error__span : ""}`}>
 					{createField("text", "captcha", "Symbols from image", Input, [required])}
 				</div >
 			</div>}
 			<div className={style.form__item}>
 				<Field id="rememberMe" type="checkbox" name="rememberMe" component='input' />
-				<label for="rememberMe" className={style.form__label}>remember me</label>
+				<label htmlFor="rememberMe" className={style.form__label}>remember me</label>
 			</div>
 			<div className={style.form__item}>
 				<button className={style.form__btn}>Login</button>

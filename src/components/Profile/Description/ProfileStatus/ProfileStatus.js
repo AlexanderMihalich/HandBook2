@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import style from '../Description.module.css'
+import style from '../Description.module.scss'
 
-const ProfileStatus = ({ status, updateStatus, ...props }) => {
+const ProfileStatus = ({ status, updateUserStatus }) => {
 
 	let [editMode, setEditMode] = useState(false);
 	let [statusHook, setStatus] = useState(status);
@@ -15,7 +15,7 @@ const ProfileStatus = ({ status, updateStatus, ...props }) => {
 	}
 	const deactivateEditMode = () => {
 		setEditMode(false)
-		updateStatus(statusHook)
+		updateUserStatus(statusHook)
 	}
 	const onStatusChange = (e) => {
 		setStatus(e.currentTarget.value)
@@ -23,9 +23,9 @@ const ProfileStatus = ({ status, updateStatus, ...props }) => {
 
 	return (
 		(!editMode)
-			//*  ? <span className={style.description__status}>{props.profile.aboutMe}</span> */
-			? <span onDoubleClick={activateEditMode} className={style.description__status}>......{status || "No status"}</span>
-			: <input autoFocus onBlur={deactivateEditMode} onChange={onStatusChange} type="text" className={style.description__statusInput} value={statusHook} />
+			//*  ? <span className={style.info__status}>{props.profile.aboutMe}</span> */
+			? <span onDoubleClick={activateEditMode} className={style.info__status}>......{status || "No status"}</span>
+			: <input autoFocus onBlur={deactivateEditMode} onChange={onStatusChange} type="text" className={style.info__inputStatus} value={statusHook} />
 	)
 }
 
